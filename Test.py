@@ -1,7 +1,7 @@
 import pytest
 
-from LPTHW.Exercise import exercise_one, cities_list
-from LPTHW.Solution import exercise_one_sol
+from Exercise import exercise_one, cities_list
+from Solution import exercise_one_sol
 
 
 # ANSI color codes
@@ -27,8 +27,15 @@ expected_output = [
 
 def assert_ex_one(result):
     try:
-        assert len(result) == len(cities_list), f"\n\n\t\t{BLUE}Expected that the amount of elements in the result list are the same as the amount of cities. \n\t\tInstead the amount of elements in the result list was  {len(result)}, \n\t\tthe result list was: {result}{RESET}"
-        assert result == expected_output, f"\n\n\t\t{BLUE}Expected a list with dictionaries that contain the cities and their data. Like so: \n\n{expected_output}\n\n but got\n\n {result}\n\n\n\n{RESET}"
+        assert len(result) == len(cities_list), (f"\n\n\t\t{BLUE}Expected that the amount of elements in the result \n"
+                                                 f"list are the same as the amount of cities. \n\t\tInstead the amount "
+                                                 f"of elements in the result list was  {len(result)}, \n\t\tthe result"
+                                                 f" list was: {result}{RESET}")
+
+        assert result == expected_output, (f"\n\n\t\t{BLUE}Expected a list with dictionaries that contain the cities"
+                                           f" and their data. Like so: \n\n{expected_output}\n\n "
+                                           f"but got\n\n {result}\n\n\n\n{RESET}")
+
         print(f"\n\n{GREEN}All tests passed{RESET}\n\n")
     except AssertionError as e:
         print(e)

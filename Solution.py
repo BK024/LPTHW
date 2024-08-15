@@ -1,11 +1,10 @@
-from LPTHW import Exercise
-from LPTHW.Exercise import moods_list, cost_list
+from Exercise import moods_list, cost_list, cities_list
 
 
 def exercise_one_sol():
     data_list = []
 
-    for idx, city in enumerate(Exercise.cities_list):
+    for idx, city in enumerate(cities_list):
         dict_to_append_to_data_list = {}
         dict_to_append_to_data_list["city"] = city
         dict_to_append_to_data_list["mood"] = moods_list[idx % len(moods_list)]
